@@ -13,7 +13,8 @@ abstract class Crud {
     abstract public function update();
     
     public function find($id) {
-        $stmt = $this->db->prepare("select * from $this->table where id=$id");
+        $stmt = $this->db->prepare("select * from $this->table where id=:id");
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
         return $stmt;
     }
@@ -25,7 +26,8 @@ abstract class Crud {
     }
     
     public function delete($id) {
-        $stmt = $this->db->prepare("delete from $this->table where id=$id");
+        $stmt = $this->db->prepare("delete from $this->table where id=:id");
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
     }
     

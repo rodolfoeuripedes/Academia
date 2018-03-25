@@ -6,6 +6,7 @@ require_once 'classAluno.php';
 require_once 'classFuncionario.php';
 require_once 'classProfessor.php';
 require_once 'classContrato.php';
+require_once 'classExercicio.php';
 
 class Criadora {
     
@@ -27,6 +28,10 @@ class Criadora {
     
     public static function criaContrato() {
         return new Contrato(ConexaoSingleton::getInstance());
+    }
+    
+    public static function criaExercicio() {
+        return new Exercicio(ConexaoSingleton::getInstance());
     }
     
 }//Fecha classe Criadora

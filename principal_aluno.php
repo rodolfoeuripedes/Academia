@@ -52,6 +52,7 @@ echo "<table border='1'>
                         <td width='60'>Estado Civil</td>
                         <td width='60'>Profissão</td>
                         <td width='60'>E-mail</td>
+                        <td width='60'>Avaliação</td>
                         <td width='60'>Inserir</td>
         </tr>";
   echo "<form name='inserir' method='post' action='inserir_aluno.php' target='mainFrame_aluno'>";
@@ -67,6 +68,7 @@ echo "<table border='1'>
             <td><input type='text' size='10' name='estadoCivil' value=''></td>
             <td><input type='text' size='18' name='profissao' value=''></td>
             <td><input type='text' size='18' name='email' value=''></td>
+            <td><input type='text' size='18' name='avaliacao' value=''></td>
             <td><input type='submit' name='Submit' value='Inserir'></td>
         </tr>
         </form>
@@ -91,6 +93,7 @@ echo "<table border='1'>
             <td width='60'>Estado Civil</td>
             <td width='60'>Profissão</td>
             <td width='60'>E-mail</td>
+            <td width='60'>Avaliação</td>
             <td width='60'>Ativo/Inativo</td>
             <td width='60'>Atualizar Dados</td>
 	</tr>";
@@ -101,7 +104,7 @@ while ($row = $stmt->fetch()) {
     else{
     $a = " ";
     }*/
-    if ($row['12']==1){
+    if ($row['13']==1){
     echo "<form name='".$row['0']."' method='post' action='update_aluno.php' target='mainFrame_aluno'>
         <tr>
             <td><input type='text' size='1' name='id' value='".$row['0']."'></td>
@@ -116,6 +119,7 @@ while ($row = $stmt->fetch()) {
             <td><input type='text' size='10' name='estadoCivil' value='".$row['9']."'></td>
             <td><input type='text' size='18' name='profissao' value='".$row['10']."'></td>
             <td><input type='text' size='18' name='email' value='".$row['11']."'></td>
+            <td><input type='text' size='18' name='avaliacao' value='".$row['12']."'></td>
             <td><select name='ativoInativo'><option value='1'>Ativo</option><option value='0'>Inativo</option></select></td>
             <td><input type='submit' name='Submit' value='Atualizar'></td>
         </tr>
@@ -155,11 +159,12 @@ echo "<table border='1'>
             <td width='60'>Estado Civil</td>
             <td width='60'>Profissão</td>
             <td width='60'>E-mail</td>
+            <td width='60'>Avaliação</td>
             <td width='60'>Ativo/Inativo</td>
             <td width='60'>Atualizar Dados</td>
 	</tr>";
 while ($row = $stmt->fetch()) {
-    if ($row['12']==0){
+    if ($row['13']==0){
     echo "<form name='".$row['0']."' method='post' action='update_aluno.php' target='mainFrame_aluno'>
         <tr>
             <td><input type='text' size='1' name='id' value='".$row['0']."'></td>
@@ -174,6 +179,7 @@ while ($row = $stmt->fetch()) {
             <td><input type='text' size='10' name='estadoCivil' value='".$row['9']."'></td>
             <td><input type='text' size='18' name='profissao' value='".$row['10']."'></td>
             <td><input type='text' size='18' name='email' value='".$row['11']."'></td>
+            <td><input type='text' size='18' name='avaliacao' value='".$row['12']."'></td>
             <td><select name='ativoInativo'><option value='0'>Inativo</option><option value='1'>Ativo</option></select></td>
             <td><input type='submit' name='Submit' value='Atualizar'></td>
         </tr>

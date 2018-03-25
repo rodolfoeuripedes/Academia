@@ -25,16 +25,19 @@ session_start();
                         <select name="relatorios">
                             <?php
                             if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Professor" || $_SESSION['cargo'] == "Recepcionista")
-                                echo "<option value=\"1\">Alunos</option>";
+                                echo "<option value=\"1\">Aluno</option>";
 
                             if ($_SESSION['cargo'] == "Proprietario")
-                                echo "<option value=\"2\">Funcionários</option>";
+                                echo "<option value=\"2\">Funcionário</option>";
 
                             if ($_SESSION['cargo'] == "Proprietario")
-                                echo "<option value=\"3\">Professores</option>";
+                                echo "<option value=\"3\">Professor</option>";
 
                             if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Recepcionista")
-                                echo "<option value=\"4\">Contratos</option>";
+                                echo "<option value=\"4\">Contrato</option>";
+                            
+                            if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Recepcionista" || $_SESSION['cargo'] == "Professor")
+                                echo "<option value=\"5\">Exercício</option>";
                             ?>
                         </select>
                         <input type="submit" name="Submit" value="Enviar">&nbsp;&nbsp;&nbsp;

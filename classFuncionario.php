@@ -67,7 +67,7 @@ class Funcionario extends Pessoa {
     }
     
     public function update() {
-        $stmt = $this->db->prepare("update funcionario set nome = :nome, dataNasc = :dataNasc, cpf = :cpf, rg = :rg, sexo = :sexo, endereco = :endereco, foneCasa = :foneCasa, foneCelular = :foneCelular, estadoCivil = :estadoCivil, profissao = :profissao, email = :email, salario = :salario, cargo = :cargo, senha = :senha, ativoInativo = :ativoInativo where funcionario.id=:id");
+        $stmt = $this->db->prepare("update $this->table set nome = :nome, dataNasc = :dataNasc, cpf = :cpf, rg = :rg, sexo = :sexo, endereco = :endereco, foneCasa = :foneCasa, foneCelular = :foneCelular, estadoCivil = :estadoCivil, profissao = :profissao, email = :email, salario = :salario, cargo = :cargo, senha = :senha, ativoInativo = :ativoInativo where $this->table.id=:id");
         $stmt->bindParam(":id", $this->id);
         $stmt->bindParam(":nome", $this->nome);
         $stmt->bindParam(":dataNasc", $this->dataNasc);

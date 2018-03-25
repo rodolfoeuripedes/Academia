@@ -155,7 +155,7 @@ class Contrato extends Crud {
     }
     
     public function update() {
-        $stmt = $this->db->prepare("update $this->table set dataInicio = :dataInicio, dataTermino = :dataTermino, tipo = :tipo, valor = :valor, desconto = :desconto, juros = :juros, diaVencPagam = :diaVencPagam, descricao = :descricao, qtdRenovacao = :qtdRenovacao, avaliacaoMedica = :avaliacaoMedica, dataAvaliacao = :dataAvaliacao, ativoInativo = :ativoInativo where contrato.id=:id");
+        $stmt = $this->db->prepare("update $this->table set dataInicio = :dataInicio, dataTermino = :dataTermino, tipo = :tipo, valor = :valor, desconto = :desconto, juros = :juros, diaVencPagam = :diaVencPagam, descricao = :descricao, qtdRenovacao = :qtdRenovacao, avaliacaoMedica = :avaliacaoMedica, dataAvaliacao = :dataAvaliacao, ativoInativo = :ativoInativo where $this->table.id=:id");
         $stmt->bindParam(":id", $this->id);
         $stmt->bindParam(":dataInicio", $this->dataInicio);
         $stmt->bindParam(":dataTermino", $this->dataTermino);

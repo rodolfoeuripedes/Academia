@@ -27,7 +27,7 @@
                     <td width="35%" align="left">
                         <p>
                             <font color="#FFFFFF">E-MAIL</font> 
-                            <input type="text" name="email" size="30">
+                            <input type="email" name="email" size="30">
                         </p>
                         <p>
                             <font color="#FFFFFF">SENHA</font> 

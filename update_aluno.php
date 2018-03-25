@@ -15,6 +15,7 @@ $foneCelular = $_POST['foneCelular'];
 $estadoCivil = $_POST['estadoCivil'];
 $profissao = $_POST['profissao'];
 $email = $_POST['email'];
+$avaliacao = $_POST['avaliacao'];
 $ativoInativo = $_POST['ativoInativo'];
 
 $Aluno = Criadora::criaAluno();
@@ -31,6 +32,7 @@ $Aluno->setFoneCelular($foneCelular);
 $Aluno->setEstadoCivil($estadoCivil);
 $Aluno->setProfissao($profissao);
 $Aluno->setEmail($email);
+$Aluno->setAvaliacao($avaliacao);
 $Aluno->setAtivoInativo($ativoInativo);
 $Aluno->update();
 

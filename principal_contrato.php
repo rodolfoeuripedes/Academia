@@ -34,8 +34,6 @@ $anoTermino = $_POST['anoTermino'];
 
 <!-- ===================Inserrir novo contrato=================== -->
 <?php
-$today = date("Y-m-d");
-//$today = date(DATE_ATOM, mktime (0,0,0, date("m")  , date("d"), date("Y")));
 $todosAlunos = $db->prepare("select * from aluno where ativoInativo like '1' order by nome");
 $todosAlunos->execute();
 ?>
@@ -48,7 +46,7 @@ $todosAlunos->execute();
             <th width='80' title='O valor inicia com a data do dia de hoje'>Data Inicio</th>
             <th width='60'>Data Termino</th>
             <th width='80'>Tipo</th>
-            <th width='80'>Valor</th>
+            <th width='80'>Valor (R$)</th>
             <th width='40'>Desconto (R$)</th>
             <th width='80'>Juros Atraso Pagam. (%)</th>
             <th width='20'>Dia Venc. Pagam.</th>
@@ -71,15 +69,15 @@ $todosAlunos->execute();
                         }
                         ?>
                     </select></td>
-                <td><input type='date' size='10' name='dataInicio' value='<?php echo date("Y-m-d") ?>' min='<?php echo $today ?>' required></td>
+                <td><input type='date' size='10' name='dataInicio' value='<?php echo date("Y-m-d") ?>' min='<?php echo date("Y-m-d") ?>' required></td>
                 <td><input type='date' size='10' name='dataTermino' value='' required></td>
                 <td><input type='text' size='10' name='tipo' value='' required></td>
                 <td><input type='text' size='10' name='valor' value='' required></td>
                 <td><input type='text' size='10' name='desconto' value=''></td>
-                <td><input type='text' size='10' name='juros' value='' required></td>
+                <td><input type='text' size='10' name='juros' value='' placeholder='1.5' required></td>
                 <td><input type='number' name='diaVencPagam' value='' style='width: 5em' min='1' max='31' required></td>
                 <td><input type='text' size='18' name='descricao' value=''></td>
-                <td><input type='number' name='qtdRenovacao' value='' style='width: 6em' min='0'></td>
+                <td><input type='number' name='qtdRenovacao' value='0' style='width: 6em' min='0' required></td>
                 <td><select name='avaliacaoMedica' required>
                         <option value=''>&#8195;&#8195;&#8195;</option>
                         <option value='sim'>Sim</option>
@@ -120,7 +118,7 @@ $stmt->execute();
             <th width='80' title='O valor inicia com a data do dia de hoje'>Data Inicio</th>
             <th width='60'>Data Termino</th>
             <th width='80'>Tipo</th>
-            <th width='80'>Valor</th>
+            <th width='80'>Valor (R$)</th>
             <th width='40'>Desconto (R$)</th>
             <th width='80'>Juros Atraso Pagam. (%)</th>
             <th width='60'>Dia Venc. Pagam.</th>
@@ -138,12 +136,6 @@ $stmt->execute();
 <?php
 $num = 0;
 while ($row = $stmt->fetch()) {
-    /*if($row['5']=="Masculino"){
-    $a = "selected";
-    }
-    else{
-    $a = " ";
-    }*/
     if ($row['13']==1){
         if($num % 2 == 0){
             $class="class='dif'";//Número par
@@ -164,13 +156,12 @@ while ($row = $stmt->fetch()) {
             <td><input type='text' size='10' name='juros' value='".$row['7']."' style='$style' required></td>
             <td><input type='number' name='diaVencPagam' value='".$row['8']."' style='$style; width: 5em' min='1' max='31' required></td>
             <td><input type='text' size='18' name='descricao' value='".$row['9']."' style='$style'></td>
-            <td><input type='number' name='qtdRenovacao' value='".$row['10']."' style='$style; width: 6em' min='0'></td>
+            <td><input type='number' name='qtdRenovacao' value='".$row['10']."' style='$style; width: 6em' min='0' required></td>
             <td><select name='avaliacaoMedica' style='$style' required>"; ?>
                 <option value=''>&#8195;&#8195;&#8195;</option>
                 <option value='sim' <?php echo $row['11'] == 'sim' ? 'selected':'' ?> >Sim &#8195;</option>
                 <option value='nao' <?php echo $row['11'] == 'nao' ? 'selected':'' ?> >Não &#8195;</option>
-     <?php echo"</select>
-            </td>
+     <?php echo"</select></td>
             <td><input type='date' size='10' name='dataAvaliacao' value='".$row['12']."' style='$style'></td>
             <td><select name='ativoInativo' style='$style'>"; ?>
                 <option value='1' <?php echo $row['13'] == 1 ? 'selected':'' ?> >Ativo &#8195;&#8195;</option>
@@ -181,12 +172,12 @@ while ($row = $stmt->fetch()) {
             <form name='".$row['0']."' method='post' action='imprimir_contrato.php' target='mainFrame'>
             <td><input type='hidden' name='id' value='".$row['0']."'>
                 <input type='hidden' name='Aluno_id' value='".$row['14']."'>
-                <input type='submit' name='Submit' value='Visualizar'>
-            </td></form>
-                <form name='".$row['0']."' method='post' action='delete_contrato.php' target='mainFrame'>
-                <td><input type='hidden' name='id' value='".$row['0']."'>
-                <input type='submit' name='Submit' value='Deletar'>
-            </td></form>
+                <input type='submit' name='Submit' value='Visualizar'></td>
+            </form>
+            <form name='".$row['0']."' method='post' action='delete_contrato.php' target='mainFrame'>
+            <td><input type='hidden' name='id' value='".$row['0']."'>
+                <input type='submit' name='Submit' value='Deletar'></td>
+            </form>
         </tr>";
         $num++;
     } //Fecha if
@@ -221,7 +212,7 @@ $stmt->execute();
             <th width='80' title='O valor inicia com a data do dia de hoje'>Data Inicio</th>
             <th width='60'>Data Termino</th>
             <th width='80'>Tipo</th>
-            <th width='80'>Valor</th>
+            <th width='80'>Valor (R$)</th>
             <th width='40'>Desconto (R$)</th>
             <th width='80'>Juros Atraso Pagam. (%)</th>
             <th width='60'>Dia Venc. Pagam.</th>
@@ -258,7 +249,7 @@ while ($row = $stmt->fetch()) {
             <td><input type='text' size='10' name='juros' value='".$row['7']."' style='$style' required></td>
             <td><input type='number' name='diaVencPagam' value='".$row['8']."' style='$style; width: 5em'  min='1' max='31' required></td>
             <td><input type='text' size='18' name='descricao' value='".$row['9']."' style='$style'></td>
-            <td><input type='number' name='qtdRenovacao' value='".$row['10']."' style='$style; width: 6em' min='0'></td>
+            <td><input type='number' name='qtdRenovacao' value='".$row['10']."' style='$style; width: 6em' min='0' required></td>
             <td><select name='avaliacaoMedica' style='$style' required>"; ?>
                 <option value=''>&#8195;&#8195;&#8195;</option>
                 <option value='sim' <?php echo $row['11'] == 'sim' ? 'selected':'' ?> >Sim &#8195;</option>
