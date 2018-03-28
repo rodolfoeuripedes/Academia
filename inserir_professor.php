@@ -39,7 +39,7 @@ $Professor->setSalario($salario);
 $Professor->setCargo($cargo);
 $Professor->setSenha($senha);
 $Professor->setEspecialidade($especialidade);
-$profissao->setAtivoInativo(1);
+$Professor->setAtivoInativo(1);
 $Professor->insert();
 
 echo "<h1 align='center' />Professor inserido com sucesso!!!";

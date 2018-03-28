@@ -82,8 +82,7 @@ $todosAlunos->execute();
                         <option value=''>&#8195;&#8195;&#8195;</option>
                         <option value='sim'>Sim</option>
                         <option value='nao'>Não</option>
-                    </select>
-                </td>
+                    </select></td>
                 <td><input type='date' size='10' name='dataAvaliacao' value=''></td>
                 <td><input type='submit' name='Submit' value='Inserir'></td>
             </tr>
