@@ -24,7 +24,6 @@ class FichaAvaliacao extends Crud {
     private $medAntebracoEsq;
     private $peso;
     private $altura;
-    private $ativoInativo;
     protected $table = "fichaavaliacao";
     
     public function __construct(PDO $db) {
@@ -110,11 +109,7 @@ class FichaAvaliacao extends Crud {
     function getAltura() {
         return $this->altura;
     }
-    
-    function getAtivoInativo() {
-        return $this->ativoInativo;
-    }
-    
+        
     function setId($id) {
         $this->id = $id;
     }
@@ -194,13 +189,9 @@ class FichaAvaliacao extends Crud {
     function setAltura($altura) {
         $this->altura = $altura;
     }
-    
-    function setAtivoInativo($ativoInativo) {
-        $this->ativoInativo = $ativoInativo;
-    }
-    
+        
     public function insert() {
-        $stmt = $this->db->prepare("insert into $this->table(Professor_id ,Aluno_id, dataAvaliacao, objetivo, obsObjetivo, medTorax, medCinturaAlta, medCinturaAbdomen, medQuadril, medCoxaDir, medCoxaEsq, medPanturrilhaDir, medPanturrilhaEsq, medBracoDir, medBracoEsq, medAntebracoDir, medAntebracoEsq, peso, altura) values(:Professor_id , :Aluno_id, :dataAvaliacao, :objetivo, :obsObjetivo, :medTorax, :medCinturaAlta, :medCinturaAbdomen, :medQuadril, :medCoxaDir, :medCoxaEsq, :medPanturrilhaDir, :medPanturrilhaEsq, :medBracoDir, :medBracoDir, :medAntebracoDir, :medAntebracoEsq, :peso, :altura)");
+        $stmt = $this->db->prepare("insert into $this->table(Professor_id, Aluno_id, dataAvaliacao, objetivo, obsObjetivo, medTorax, medCinturaAlta, medCinturaAbdomen, medQuadril, medCoxaDir, medCoxaEsq, medPanturrilhaDir, medPanturrilhaEsq, medBracoDir, medBracoEsq, medAntebracoDir, medAntebracoEsq, peso, altura) values(:Professor_id, :Aluno_id, :dataAvaliacao, :objetivo, :obsObjetivo, :medTorax, :medCinturaAlta, :medCinturaAbdomen, :medQuadril, :medCoxaDir, :medCoxaEsq, :medPanturrilhaDir, :medPanturrilhaEsq, :medBracoDir, :medBracoDir, :medAntebracoDir, :medAntebracoEsq, :peso, :altura)");
         $stmt->bindParam(":Professor_id", $this->Professor_id);
         $stmt->bindParam(":Aluno_id", $this->Aluno_id);
         $stmt->bindParam(":dataAvaliacao", $this->dataAvaliacao);

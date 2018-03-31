@@ -8,6 +8,7 @@ require_once 'classProfessor.php';
 require_once 'classContrato.php';
 require_once 'classExercicio.php';
 require_once 'classFichaAvaliacao.php';
+require_once 'classContaReceber.php';
 
 class Criadora {
     
@@ -41,6 +42,10 @@ class Criadora {
     
     public static function criaFichaAvaliacao() {
         return new FichaAvaliacao(ConexaoSingleton::getInstance());
+    }
+    
+    public static function criaContaReceber() {
+        return new ContaReceber(ConexaoSingleton::getInstance());
     }
     
 }//Fecha classe Criadora

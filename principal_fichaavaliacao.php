@@ -33,7 +33,7 @@ $anoAvaliacao = $_POST['anoAvaliacao'];
     </head>
     <body>
 
-<!-- ===================Inserrir nova ficha de avaliacao=================== -->
+<!-- ===================Inserir nova ficha de avaliacao=================== -->
 <?php
 $todosProfessores = $db->prepare("select * from professor where ativoInativo like '1' order by nome");
 $todosProfessores->execute();

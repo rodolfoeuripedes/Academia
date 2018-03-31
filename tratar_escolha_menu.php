@@ -15,6 +15,8 @@ if ($escolha == 1) {
     header("Location: conjunto_exercicio.php");
 } else if ($escolha == 6) {
     header("Location: conjunto_fichaavaliacao.php");
+} else if ($escolha == 7) {
+    header("Location: conjunto_contareceber.php");
 }
 /*
   //menu edição

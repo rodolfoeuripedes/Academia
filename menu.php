@@ -41,6 +41,9 @@ session_start();
                             
                             if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Professor")
                                 echo "<option value=\"6\">Ficha de Avaliação</option>";
+                            
+                            if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Recepcionista")
+                                echo "<option value=\"7\">Conta a Receber</option>";
                             ?>
                         </select>
                         <input type="submit" name="Submit" value="Enviar">&nbsp;&nbsp;&nbsp;
