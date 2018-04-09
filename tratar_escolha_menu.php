@@ -17,6 +17,8 @@ if ($escolha == 1) {
     header("Location: conjunto_fichaavaliacao.php");
 } else if ($escolha == 7) {
     header("Location: conjunto_contareceber.php");
+} else if ($escolha == 8) {
+    header("Location: conjunto_turma.php");
 }
 /*
   //menu edição

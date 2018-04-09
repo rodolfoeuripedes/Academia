@@ -32,7 +32,7 @@ $anoTermino = $_POST['membro'];
     </head>
     <body>
 
-<!-- ===================Inserrir novo exercicio=================== -->
+<!-- ===================Inserir novo exercicio=================== -->
 <?php
 
 ?>
@@ -142,7 +142,7 @@ while ($row = $stmt->fetch()) {
      <?php echo"</select></td>
             <td><input type='submit' name='Submit' value='Atualizar'></td>
             </form>
-            <form name='".$row['0']."' method='post' action='delete_exercicio.php' target='mainFrame'>
+            <form name='".$row['0']."' method='post' action='delete_exercicio.php' target='mainFrame_exercicio'>
             <td><input type='hidden' name='id' value='".$row['0']."'>
                 <input type='submit' name='Submit' value='Deletar'></td>
             </form>

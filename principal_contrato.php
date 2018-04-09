@@ -32,7 +32,7 @@ $anoTermino = $_POST['anoTermino'];
     </head>
     <body>
 
-<!-- ===================Inserrir novo contrato=================== -->
+<!-- ===================Inserir novo contrato=================== -->
 <?php
 $todosAlunos = $db->prepare("select * from aluno where ativoInativo like '1' order by nome");
 $todosAlunos->execute();
@@ -173,7 +173,7 @@ while ($row = $stmt->fetch()) {
                 <input type='hidden' name='Aluno_id' value='".$row['14']."'>
                 <input type='submit' name='Submit' value='Visualizar'></td>
             </form>
-            <form name='".$row['0']."' method='post' action='delete_contrato.php' target='mainFrame'>
+            <form name='".$row['0']."' method='post' action='delete_contrato.php' target='mainFrame_contrato'>
             <td><input type='hidden' name='id' value='".$row['0']."'>
                 <input type='submit' name='Submit' value='Deletar'></td>
             </form>

@@ -193,7 +193,7 @@ while ($row = $stmt->fetch()) {
             <td><input type='text' size='10' name='altura' value='".$row['19']."' style='$style' required></td>
             <td><input type='submit' name='Submit' value='Atualizar'></td>
             </form>
-            <form name='".$row['0']."' method='post' action='delete_fichaavaliacao.php' target='mainFrame'>
+            <form name='".$row['0']."' method='post' action='delete_fichaavaliacao.php' target='mainFrame_fichaavaliacao'>
             <td><input type='hidden' name='id' value='".$row['0']."'>
                 <input type='submit' name='Submit' value='Deletar'></td>
             </form>

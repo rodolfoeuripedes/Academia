@@ -68,7 +68,7 @@ echo "<table border='1'>
             <td><input type='text' size='10' name='estadoCivil' value=''></td>
             <td><input type='text' size='18' name='profissao' value=''></td>
             <td><input type='text' size='18' name='email' value=''></td>
-            <td><input type='text' size='18' name='avaliacao' value=''></td>
+            <td><input type='text' size='18' name='avaliacao' value='' placeholder='7.5'></td>
             <td><input type='submit' name='Submit' value='Inserir'></td>
         </tr>
         </form>
