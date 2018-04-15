@@ -19,6 +19,8 @@ if ($escolha == 1) {
     header("Location: conjunto_contareceber.php");
 } else if ($escolha == 8) {
     header("Location: conjunto_turma.php");
+} else if ($escolha == 9) {
+    header("Location: conjunto_fichatreino.php");
 }
 /*
   //menu edição

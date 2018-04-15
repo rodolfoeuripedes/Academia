@@ -17,9 +17,10 @@ class Turma extends Crud {
     private $horaTermino;
     private $avaliacao;
     private $situacao;
+    protected $table = "turma";
+    
     private $Aluno_id;
     private $tablehas = "turma_has_aluno";
-    protected $table = "turma";
     
     public function __construct(PDO $db) {
         parent::__construct($db);
@@ -155,10 +156,10 @@ class Turma extends Crud {
         $this->id = $this->db->lastInsertId();
         $row = $this->Aluno_id;
         for ($i = 0, $x = count($row); $i < $x; ++$i) {
-                $stmt = $this->db->prepare("insert into $this->tablehas(Turma_id, Aluno_id) values(:Turma_id, :Aluno_id)");
-                $stmt->bindParam(":Turma_id", $this->id);
-                $stmt->bindParam(":Aluno_id", $row[$i]);
-                $stmt->execute();
+            $stmt = $this->db->prepare("insert into $this->tablehas(Turma_id, Aluno_id) values(:Turma_id, :Aluno_id)");
+            $stmt->bindParam(":Turma_id", $this->id);
+            $stmt->bindParam(":Aluno_id", $row[$i]);
+            $stmt->execute();
         }
     }
     

@@ -49,7 +49,7 @@ $todosAlunos->execute();
                         </tr>\
                         ');
                         var y = x;
-                        $.get('ListaAlunosAtivos.php', function(data){
+                        $.get('listaAlunosAtivos.php', function(data){
                             $("#Aluno_id" + y).html(data);
                             }
                         );
@@ -87,15 +87,15 @@ $todosAlunos->execute();
         <?php
         echo "
             <form id='atualizar' name='".$id."' method='post' action='update_turma.php' target='mainFrame'>
-            <tr>
-            <td align='center'><input type='hidden' name='id' value='".$id."'>".$id."</td>
-            <td nowrap='nowrap' width='250'>".$Professor_nome."</td>
-            <td><input type='text' size='10' name='nome' value='".$nome."' required></td>
-            <td><input type='text' size='10' name='turno' value='".$turno."' required></td>
-            <td><input type='text' size='10' name='qtdAluno' value='".$qtdAluno."' required></td>
-            <td><input type='text' size='10' name='carHorSem' value='".$carHorSem."' required></td>
-            <td colspan='3'><input type='text' size='10' name='diasSemana' value='".$diasSemana."' ></td>
-            </tr>";
+                <tr>
+                    <td align='center'><input type='hidden' name='id' value='".$id."'>".$id."</td>
+                    <td nowrap='nowrap' width='250'>".$Professor_nome."</td>
+                    <td><input type='text' size='10' name='nome' value='".$nome."' required></td>
+                    <td><input type='text' size='10' name='turno' value='".$turno."' required></td>
+                    <td><input type='text' size='10' name='qtdAluno' value='".$qtdAluno."' required></td>
+                    <td><input type='text' size='10' name='carHorSem' value='".$carHorSem."' required></td>
+                    <td colspan='3'><input type='text' size='10' name='diasSemana' value='".$diasSemana."' ></td>
+                </tr>";
         ?>
         <tr height="40">
             <td colspan='9'></td>

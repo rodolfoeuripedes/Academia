@@ -47,7 +47,7 @@ $turno = $_POST['turno'];
                         </tr>\
                         ');
                         var y = x;
-                        $.get('ListaAlunosAtivos.php', function(data){
+                        $.get('listaAlunosAtivos.php', function(data){
                             $("#Aluno_id" + y).html(data);
                             }
                         );
@@ -191,7 +191,7 @@ $stmt->execute();
             <th width='60'>Situação</th>
             <th width='250'>Nome dos Alunos</th>
             <th width='60'>Atualizar Dados</th>
-            <th width='60'>Visualizar Contrato</th>
+            <th width='60'>Visualizar Turma</th>
             <th width='60'>Deletar Turma</th>
 	</tr>
     </thead>
