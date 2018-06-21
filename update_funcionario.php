@@ -39,5 +39,9 @@ $Funcionario->setCargo($cargo);
 $Funcionario->setSenha($senha);
 $Funcionario->setAtivoInativo($ativoInativo);
 $Funcionario->update();
+?>
 
-echo "<h1 align='center' />Funcionario atualizado com sucesso!!!";
+<script type='text/javascript'>
+    alert('Funcionario atualizado com sucesso!!!');
+    location = 'principal_funcionario.php';
+</script>

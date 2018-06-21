@@ -12,7 +12,7 @@ class Login {
     }
     
     public function autenticar($email, $senha) {
-        $query = "select * from funcionario where email=:email and senha=:senha";
+        $query = "select * from funcionario where email=:email and senha=:senha and ativoInativo=1";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha", $senha);
@@ -20,7 +20,7 @@ class Login {
         $stmt->execute();
         $this->funcionario = $stmt->fetch();
         
-        $stmt = $this->db->prepare("select * from professor where email=:email and senha=:senha");
+        $stmt = $this->db->prepare("select * from professor where email=:email and senha=:senha and ativoInativo=1");
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha", $senha);
         $stmt->execute();

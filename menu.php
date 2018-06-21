@@ -36,7 +36,7 @@ session_start();
                             if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Recepcionista")
                                 echo "<option value=\"4\">Contrato</option>";
                             
-                            if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Recepcionista" || $_SESSION['cargo'] == "Professor")
+                            if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Professor")
                                 echo "<option value=\"5\">Exercício</option>";
                             
                             if ($_SESSION['cargo'] == "Proprietario" || $_SESSION['cargo'] == "Professor")

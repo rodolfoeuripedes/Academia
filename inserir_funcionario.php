@@ -39,5 +39,9 @@ $Funcionario->setCargo($cargo);
 $Funcionario->setSenha($senha);
 $Funcionario->setAtivoInativo(1);
 $Funcionario->insert();
+?>
 
-echo "<h1 align='center' />Funcionario inserido com sucesso!!!";
+<script type='text/javascript'>
+    alert('Funcionario inserido com sucesso!!!');
+    location = 'principal_funcionario.php';
+</script>

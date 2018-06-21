@@ -41,5 +41,9 @@ $Professor->setSenha($senha);
 $Professor->setEspecialidade($especialidade);
 $Professor->setAtivoInativo(1);
 $Professor->insert();
+?>
 
-echo "<h1 align='center' />Professor inserido com sucesso!!!";
+<script type='text/javascript'>
+    alert('Professor inserido com sucesso!!!');
+    location = 'principal_professor.php';
+</script>

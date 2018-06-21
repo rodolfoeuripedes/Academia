@@ -39,7 +39,11 @@ $Professor->setSalario($salario);
 $Professor->setCargo($cargo);
 $Professor->setSenha($senha);
 $Professor->setEspecialidade($especialidade);
-$profissao->setAtivoInativo($ativoInativo);
+$Professor->setAtivoInativo($ativoInativo);
 $Professor->update();
+?>
 
-echo "<h1 align='center' />Professor atualizado com sucesso!!!";
+<script type='text/javascript'>
+    alert('Professor atualizado com sucesso!!!');
+    location = 'principal_professor.php';
+</script>

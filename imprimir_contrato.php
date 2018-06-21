@@ -31,7 +31,7 @@ echo "<table border='0' align=center>
             <br>
             <font size='3' face='Times New Roman'>            
             <p align='justify'>
-            CONTRATATADA (ACADEMIA) <u>Academia RI</u>, com sede 
+            CONTRATATADA (ACADEMIA) <u>Academia Body Perfect</u>, com sede 
             em <u>Recife</u>, na <u>Rua José Brandão da Silva</u>, nº <u>528</u>, bairro <u>Boa Viagem</u>, 
             CEP <u>51021-280</u>, no Estado de <u>PE</u>, inscrita no CNPJ sob o n° <u>11.280.691/0001-40</u>, 
             e no cadastro estadual sob o nº <u>454.295.633.112</u>, neste ato representado pelo seu diretor 

@@ -14,7 +14,7 @@ if ($resultado) {
     header("Location: index2.php");
 } else {
     echo "<html><body>";
-    echo "<p align=\"center\">Usuário não encontrado ou senha incorreta</p>";
+    echo "<p align=\"center\">Usuário não encontrado ou senha incorreta ou usuário inativo</p>";
     echo "<p align=\"center\"><a href=\"index.php\">Voltar</a></p>";
     echo "</body></html>";
 }

@@ -35,5 +35,9 @@ $Aluno->setEmail($email);
 $Aluno->setAvaliacao($avaliacao);
 $Aluno->setAtivoInativo(1);
 $Aluno->insert();
+?>
 
-echo "<h1 align='center' />Aluno inserido com sucesso!!!";
+<script type='text/javascript'>
+    alert('Aluno inserido com sucesso!!!');
+    location = 'principal_aluno.php';
+</script>

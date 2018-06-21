@@ -125,8 +125,8 @@ $todosAlunos->execute();
                 <td><input type='text' size='10' name='avaliacao' value='' required></td>
                 <td><select name='situacao' style='$style' required>
                         <option value=''></option>
-                        <option value='Aberta' <?php echo $row['12'] == 'Aberta' ? 'selected':'' ?> >Aberta &#8195;&#8195;</option>
-                        <option value='Fechada' <?php echo $row['12'] == 'Fechada' ? 'selected':'' ?> >Fechada &#8195;&#8195;</option>
+                        <option value='Aberta' >Aberta &#8195;&#8195;</option>
+                        <option value='Fechada' >Fechada &#8195;&#8195;</option>
                     </select></td>
                 <td width='250'>
                     <input type="button" id="add_field" value="Adicionar">

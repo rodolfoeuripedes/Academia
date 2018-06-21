@@ -35,5 +35,9 @@ $Aluno->setEmail($email);
 $Aluno->setAvaliacao($avaliacao);
 $Aluno->setAtivoInativo($ativoInativo);
 $Aluno->update();
+?>
 
-echo "<h1 align='center' />Aluno atualizado com sucesso!!!";
+<script type='text/javascript'>
+    alert('Aluno atualizado com sucesso!!!');
+    location = 'principal_aluno.php';
+</script>
